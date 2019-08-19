@@ -16,12 +16,15 @@
       [showCancelButton]="shouldShowCancel"
       (search)="onInput($event)"
       (ionCancel)="onCancel($event)"
+ 
+     
     >
     </ion-searchbar>
   </ion-navbar>
 
+  
 </ion-header>
-
+ 
 
 <ion-content id = "main" >
 
@@ -38,9 +41,9 @@
       {{date | date:'hh:mm:ss'}}</h3>
    
     <ion-icon class = "w-icon" id = "spin" name = "sunny" *ngIf = "weatherData?.weather[0].main === 'Clear'"></ion-icon>
-    <ion-icon class = "w-icon" id = "spin" name = "rainy" *ngIf = "weatherData?.weather[0].main === 'Drizzle' || weatherData?.weather[0].main == 'Rain'"></ion-icon>
-    <ion-icon class = "w-icon" id = "spin" name = "thunderstorm" *ngIf = "weatherData?.weather[0].main === 'Thunderstorm'"></ion-icon>
-    <ion-icon class = "w-icon" id = "spin" name = "cloudy" *ngIf ="weatherData?.weather[0].main === 'Clouds' || weatherData?.weather[0].main === 'Mist'" ></ion-icon>
+    <ion-icon class = "w-icon"  name = "rainy" *ngIf = "weatherData?.weather[0].main === 'Drizzle' || weatherData?.weather[0].main == 'Rain'"></ion-icon>
+    <ion-icon class = "w-icon"  name = "thunderstorm" *ngIf = "weatherData?.weather[0].main === 'Thunderstorm'"></ion-icon>
+    <ion-icon class = "w-icon"  name = "cloudy" *ngIf ="weatherData?.weather[0].main === 'Clouds' || weatherData?.weather[0].main === 'Mist'" ></ion-icon>
     <div id = "description">{{weatherData?.weather[0].description}} <br>
       <b>{{ weatherData?.main.temp - 273.15 | number : '2.0-0' }} &deg;</b>
     </div>
@@ -57,7 +60,7 @@
   <ion-item>
       humidity <b>{{ weatherData?.main.humidity}}</b>
   </ion-item>
-  <ion-item>
+  <ion-item>  
      
       windspeed <b>{{ weatherData?.wind.speed}}km </b>
   </ion-item>
